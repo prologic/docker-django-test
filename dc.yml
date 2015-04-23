@@ -1,0 +1,14 @@
+app:
+  build: src
+  links:
+    - postgres
+
+nginx:
+  build: nginx
+  links:
+    - app
+  environment:
+    - VIRTUALHOST=mysite.vz1.bne.shortcircuit.net.au
+
+postgres:
+  image: postgres
